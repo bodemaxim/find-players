@@ -1,0 +1,49 @@
+// Определение миксина
+@mixin font-smoothing {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Остальной SCSS код
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./fonts/Montserrat-Regular.ttf') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat Extrabold';
+  src: url('./fonts/Montserrat-ExtraBold.ttf') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body {
+  transition:
+    color 0.5s,
+    background-color 0.5s;
+  line-height: 1.6;
+  font-size: 15px;
+  font-family: 'Montserrat', sans-serif;
+  text-rendering: optimizeLegibility;
+  @include font-smoothing;
+}
+
+.website-title {
+  font-family: 'Montserrat Extrabold', sans-serif;
+  color: blue;
+}
