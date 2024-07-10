@@ -66,7 +66,6 @@ const initData = () => {
  * Искать сотрудников по имени.
  */
 const onSearch = async () => {
-  console.log('onSearch')
   if (searchQuery.value.length < 3 || searchQuery.value === selectedPlayerName) {
     searchPrompts.value = []
 
@@ -80,7 +79,7 @@ const onSearch = async () => {
 
   searchResults.value = []
 
-  const ids: number[] = parseSearchQuery(searchQuery.value)
+  const ids: number[] = parseSearchQuery(searchQuery.value).slice(0, 10)
 
   searchPrompts.value = dataToSearch.value
     .filter((item) => ids.includes(item.id))
@@ -101,10 +100,11 @@ const parseSearchQuery = (str: string): number[] => {
   }
 
   for (const item of dataToSearch.value) {
-    if (containsSubstring(item.name, query) && result.length < 10) {
+    if (containsSubstring(item.name, query)) {
       result.push(item.id)
-    } else if (result.length >= 10) return result
+    }
   }
+
   return result
 }
 
