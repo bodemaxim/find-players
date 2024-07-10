@@ -25,7 +25,7 @@ const setLoadingFalse = () => {
 
 //#region Данные
 /**
- * Упрощенные данные пользователей.
+ * Данные пользователей.
  */
 const dataToSearch: Ref<IPlayer[]> = ref<IPlayer[]>([])
 
@@ -43,6 +43,7 @@ const searchPrompts: Ref<IPlayerWithSelection[]> = ref<IPlayerWithSelection[]>([
  * Результаты поиска.
  */
 const searchResults: Ref<IPlayerWithSelection[]> = ref<IPlayerWithSelection[]>([])
+
 /**
  * Имя выбранного игрока.
  */
@@ -62,7 +63,7 @@ const initData = () => {
 }
 
 /**
- * Искать сотрудников по ид или нескольким ид.
+ * Искать сотрудников по имени.
  */
 const onSearch = async () => {
   console.log('onSearch')

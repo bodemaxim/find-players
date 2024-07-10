@@ -13,12 +13,12 @@ const store = useStore()
 const isLoading = computed(() => store.getters.isLoading)
 
 /**
- * Данные вопроса.
+ * Данные игрока.
  */
 const player: Ref<IPlayer | null> = ref<IPlayer | null>(null)
 
 /**
- * Событие изменения вопроса для отображения.
+ * Событие изменения игрока для отображения.
  */
 const onPlayerViewChanged = (playerView: IPlayer | null) => {
   player.value = playerView
@@ -44,7 +44,6 @@ const onPlayerViewChanged = (playerView: IPlayer | null) => {
         <p v-else class="mt-7">Выберите игрока, чтобы просмотреть информацию о нем.</p>
       </div>
     </div>
-    <button @click="console.log(player)">тест плеер</button>
   </main>
 </template>
 
